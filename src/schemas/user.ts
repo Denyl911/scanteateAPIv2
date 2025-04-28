@@ -28,7 +28,7 @@ export const User = mysqlTable('user', {
 });
 
 export const Session = mysqlTable('session', {
-	id: text('id').primaryKey(),
+	id: varchar('id', { length: 255 }).primaryKey(),
 	userId: int('user_id')
 		.notNull()
 		.references(() => User.id),
