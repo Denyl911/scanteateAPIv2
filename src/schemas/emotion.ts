@@ -9,7 +9,7 @@ import timestamps from './columns.helpers';
 import { User } from './user';
 
 export const Emotion = mysqlTable('emotion', {
-	id: serial().primaryKey(),
+	id: int().primaryKey().autoincrement(),
 	name: varchar('name', { length: 255 }),
 	color: varchar('color', { length: 255 }),
 	uri: varchar('uri', { length: 255 }),

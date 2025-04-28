@@ -14,7 +14,7 @@ import {
 import { User } from './user';
 
 export const ActSession = mysqlTable('act_session', {
-	id: serial().primaryKey(),
+	id: int().primaryKey().autoincrement(),
 	device: varchar('device', { length: 255 }),
 	start: timestamp(),
 	end: timestamp(),

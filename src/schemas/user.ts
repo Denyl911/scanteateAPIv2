@@ -17,7 +17,7 @@ import {
 import timestamps from './columns.helpers';
 
 export const User = mysqlTable('user', {
-	id: serial().primaryKey(),
+	id: int().primaryKey().autoincrement(),
 	name: varchar('name', { length: 255 }).notNull(),
 	email: varchar('email', { length: 255 }).notNull(),
 	password: varchar('password', { length: 255 }).notNull(),

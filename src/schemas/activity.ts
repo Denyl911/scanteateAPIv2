@@ -14,7 +14,7 @@ import {
 import { User } from './user';
 
 export const Activity = mysqlTable('activity', {
-	id: serial().primaryKey(),
+	id: int().primaryKey().autoincrement(),
 	type: varchar('type', { length: 255 }),
 	start: timestamp(),
 	end: timestamp(),
