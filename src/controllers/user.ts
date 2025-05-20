@@ -257,11 +257,6 @@ userRouter.delete(
 		if (!user) {
 			return error(401, { message: 'No autorizado' });
 		}
-		if (id !== user.id && user.type !== 'Admin') {
-			return error(403, {
-				message: 'No tiene permisos',
-			});
-		}
 		await db.delete(Emotion).where(eq(Emotion.id, id));
 		return { message: 'Emotion deleted' };
 	},

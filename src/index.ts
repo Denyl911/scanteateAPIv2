@@ -4,6 +4,7 @@ import { swagger } from '@elysiajs/swagger';
 import { Elysia } from 'elysia';
 import { Logestic } from 'logestic';
 import activityRouter from './controllers/activity';
+import emotionRouter from './controllers/emotion';
 import sessionRouter from './controllers/session';
 import userRouter from './controllers/user';
 
@@ -26,6 +27,7 @@ const app = new Elysia()
 	.get('/', () => 'Hello Elysia')
 	.use(userRouter)
 	.use(activityRouter)
+	.use(emotionRouter)
 	.use(sessionRouter)
 	.listen(3000);
 
